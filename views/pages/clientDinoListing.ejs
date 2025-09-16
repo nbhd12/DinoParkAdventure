@@ -1,0 +1,14 @@
+<%- include("../partials/head", { title: "Accueil Talent Hub" }) %>
+
+
+
+  <h1>Our Dinosaurs</h1>
+  <div class="dinoInfo">
+    <% dinos.forEach(dino => { %>
+     <div class="dinoCard"> 
+        <h2><%= dino.common_name %></h2>
+        <p class="description"><p class="desc">About</p><%= dino.description %></p>
+        <p class="alimentation"><p class="desc">Diet</p> <%= dino.diet %></p>
+      </div>
+    <% }) %>
+  </div>

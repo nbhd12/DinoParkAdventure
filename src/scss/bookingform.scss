@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background-color: #141C11;
+  color: hsl(0, 0%, 100%);
+}
+
+h1,h2{
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Oswald';
+}
+
+.booking-form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #141C11;
+  border: 1px solid #99910A;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.exploreMapText{
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'IBM Plex Sans';
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.formImage {
+  width: 650px;
+  margin: 15px auto 0 auto; 
+  border-radius: 10px;
+  display: block;
+}
+
+.booking-form-container h2 {
+  font-family: 'Lora', serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-row,
+.ticket-row,
+.group-ticket-row,
+.final-price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 18px;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #99910A;
+  border-radius: 6px;
+  background-color: #141C11;
+  color: #fff;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #99910A;
+}
+
+input[disabled] {
+  background-color: #222;
+  color: #464646;
+}
+
+
+#final-price-box {
+  padding: 12px;
+  background: #99920aeb;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #141c11;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-submit button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #99910A;
+  color: #141C11;
+  cursor: pointer;
+}
+
+.form-submit button:hover {
+  background-color: #D9A866;
+}
+
+
+
+@media (max-width: 768px) {
+  .contact-row,
+  .ticket-row,
+  .group-ticket-row,
+  .final-price-row {
+  grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .formImage {
+  max-width: 350px;
+  margin: 15px auto 0 auto; 
+  border-radius: 10px;
+  display: block;
+}
+
+
+}

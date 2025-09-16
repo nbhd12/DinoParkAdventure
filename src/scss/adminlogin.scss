@@ -1,0 +1,50 @@
+h2{
+    text-align: center;
+    margin: 20px 20px;
+}
+
+.loginForm{
+    border: 2px solid #99910a;
+    width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+
+.loginbtn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #99910A;
+  color: #141C11;
+  cursor: pointer;  
+}
+
+.formSubmitAdmin{
+    margin: 15px auto;
+}
+
+.loginbtn:hover {
+  background-color: #D9A866;
+}
+
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #99910A;
+  border-radius: 6px;
+  background-color: #141C11;
+  color: #fff;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    .loginForm{
+    max-width: 300px;
+    }
+}

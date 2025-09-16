@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #141C11;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Oswald';
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.brand-logo {
+    background-image: url("/favicon/favicon-32X32.png");
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo{
+    height: 52px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.nav-item a:hover {
+    // background-color: #ffffff;
+    color: #99910A;
+    // text-decoration: underline;
+
+}
+
+.nav-item.cta a {
+    background-color: #D9A866;
+    color: black;
+    
+}
+
+.nav-item.cta a:hover {
+    background-color: #99910A;
+    color: white;   
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.hamburger:hover {
+    background-color: #141C11;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        flex-direction: column;
+        background-color: #141C11;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        gap: 0;
+        padding: 16px 0;
+    }
+
+    .menu-toggle:checked ~ .nav-menu {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item a {
+        display: block;
+        padding: 16px;
+        border-radius: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

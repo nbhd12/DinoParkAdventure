@@ -1,0 +1,69 @@
+<%- include("../partials/head", { title: "Dino Park Adventure" }) %>
+
+
+
+<div class="bookTickets">
+    
+    <h1>BOOK TICKETS</h1>
+    <img src="/BookingPage/BookingFormImage.png" alt="dinoParkMap" class="formImage">
+    <p class="exploreMapText">Step into a world where dinosaurs roam freely and come to life right before your eyes. Experience the thrill of encountering these magnificent creatures as you walk the trails, watch their natural behaviors, and enjoy interactive shows that bring the Jurassic era into the present day. </p>
+    
+</div>
+
+<div class="booking-form-container">
+  <form class="booking-form">
+
+    <!-- Email + Date -->
+    <div class="contact-row">
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="booking-date">Date of Booking</label>
+        <input type="date" id="booking-date" required />
+      </div>
+    </div>
+
+    <!-- VIP + Enfant -->
+    <div class="ticket-row">
+      <div class="form-group">
+        <label for="vip">VIP Tickets</label>
+        <input type="number" id="vip" value="0" min="0" />
+      </div>
+      <div class="form-group">
+        <label for="enfant">Enfant Tickets</label>
+        <input type="number" id="enfant" value="0" min="0" />
+      </div>
+    </div>
+
+
+    <!-- Adult + Group -->
+    <div class="ticket-row">
+      <div class="form-group">
+        <label for="adult">Adult Tickets</label>
+        <input type="number" id="adult" value="0" min="0" />
+      </div>
+      <div class="form-group group-section">
+        <label for="group">Group Tickets (Coming Soon)</label>
+        <input type="number" id="group" value="0" min="0" disabled placeholder="Coming Soon" />
+      </div>
+    </div>
+
+    <!-- Final Price -->
+    <div class="final-price-row">
+      <div class="form-group" style="grid-column: span 2;">
+        <div id="final-price-box">The final price for the tickets will be</div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-submit">
+      <button type="submit">BOOK NOW</button>
+    </div>
+
+  </form>
+</div>
+
+
+</script>

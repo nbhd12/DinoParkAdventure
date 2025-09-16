@@ -1,0 +1,51 @@
+.dinoInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dinoCard {
+  border: 1px solid #99910A;
+  width: 350px;
+  border-radius: 8px;
+  padding: 20px;
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dinoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dinoCard h2 {
+  margin-top: 0;
+  color: #ffffff;
+//   border-bottom: 2px solid #99910A;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.dinoCard .description {
+  color: #666;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.dinoCard .alimentation {
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+  color: #495057;
+}
+
+.desc{
+    font-family: 'Oswald';
+    font-size: 18px;
+    color: #99910A;
+}
