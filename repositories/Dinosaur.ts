@@ -1,5 +1,5 @@
 import { Database } from "../libs/database";
-import { Repository } from "../libs/repository";
+import { Repository } from "../libs/Repository";
 
 export class DinosaurRepository extends Repository {
   findAll = async (): Promise<any[]> => {
@@ -16,5 +16,4 @@ export class DinosaurRepository extends Repository {
     return result.rows;
   };
 }
-
 

@@ -1,7 +1,5 @@
 <%- include("../partials/head", { title: "Dino Park Adventure" }) %>
 
-
-
 <div class="bookTickets">
     
     <h1>BOOK TICKETS</h1>
@@ -11,29 +9,93 @@
 </div>
 
 <div class="booking-form-container">
-  <form class="booking-form">
+  <form action="/booking/create" method="post" class="booking-form" id="bookingForm">
+
+    <!-- First Name + Last Name -->
+    <div class="contact-row">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input 
+        type="text" 
+        id="fname" 
+        placeholder="Enter your First Name" 
+        name="firstName"
+        value="<%= oldValues?.firstName || '' %>"
+        required />
+        <% if (errors?.firstName) { %>
+        <p class="error"><%= errors.firstName %></p>
+        <% } %>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input 
+        type="text" 
+        id="lname" 
+        placeholder="Enter your Last Name"
+        name="lastName"
+        value="<%= oldValues?.lastName || '' %>"
+        required />
+        <% if (errors?.lastName) { %>
+        <p class="error"><%= errors.lastName %></p>
+        <% } %>
+      </div>
+    </div>
 
     <!-- Email + Date -->
     <div class="contact-row">
       <div class="form-group">
         <label for="email">Email ID</label>
-        <input type="email" id="email" placeholder="Enter your email" required />
+        <input 
+        type="email" 
+        id="email" 
+        placeholder="Enter your email" 
+        name="email"
+        value="<%= oldValues?.email || '' %>"
+        required />
+        <% if (errors?.email) { %>
+        <p class="error"><%= errors.email %></p>
+        <% } %>
       </div>
       <div class="form-group">
         <label for="booking-date">Date of Booking</label>
-        <input type="date" id="booking-date" required />
+        <input 
+        type="date" 
+        id="booking-date" 
+        name="date"
+        value="<%= oldValues?.date || '' %>"
+        required />
+        <% if (errors?.date) { %>
+        <p class="error"><%= errors.date %></p>
+        <% } %>
       </div>
     </div>
 
     <!-- VIP + Enfant -->
     <div class="ticket-row">
       <div class="form-group">
-        <label for="vip">VIP Tickets</label>
-        <input type="number" id="vip" value="0" min="0" />
+        <label for="vip">VIP Tickets - 150€</label>
+        <input 
+        type="number" 
+        id="vip" 
+        name="vipTicket"
+        value="<%= oldValues?.vipTicket || 0 %>"  
+        min="0"/>
+        <% if (errors?.vipTicket) { %>
+        <p class="error"><%= errors.vipTicket %></p>
+        <% } %> 
+        
       </div>
       <div class="form-group">
-        <label for="enfant">Enfant Tickets</label>
-        <input type="number" id="enfant" value="0" min="0" />
+        <label for="enfant">Enfant Tickets - 80€</label>
+        <input 
+        type="number" 
+        id="enfant" 
+        name="enfantTicket"
+        value="<%= oldValues?.enfantTicket || 0 %>" 
+        min="0" />
+        <% if (errors?.enfantTicket) { %>
+        <p class="error"><%= errors.enfantTicket %></p>
+        <% } %>
       </div>
     </div>
 
@@ -41,8 +103,16 @@
     <!-- Adult + Group -->
     <div class="ticket-row">
       <div class="form-group">
-        <label for="adult">Adult Tickets</label>
-        <input type="number" id="adult" value="0" min="0" />
+        <label for="adult">Adult Tickets - 100€</label>
+        <input 
+        type="number" 
+        id="adult"
+        name="adultTicket" 
+        value="<%= oldValues?.adultTicket || 0 %>"
+        min="0" />
+        <% if (errors?.adultTicket) { %>
+        <p class="error"><%= errors.adultTicket %></p>
+        <% } %>
       </div>
       <div class="form-group group-section">
         <label for="group">Group Tickets (Coming Soon)</label>
@@ -54,6 +124,8 @@
     <div class="final-price-row">
       <div class="form-group" style="grid-column: span 2;">
         <div id="final-price-box">The final price for the tickets will be</div>
+        <p>Total: <span id="final-price-box">0</span> €</p>
+
       </div>
     </div>
 
