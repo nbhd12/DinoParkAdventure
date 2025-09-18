@@ -1,0 +1,49 @@
+<%- include("../partials/head", { title: "Dino Park Adventure" }) %>
+
+<h2>Complete your payment here</h2>
+
+<div class="loginForm">
+<form class="adminSignIn">
+    <div class="form-group">
+
+    <label for="password" class="card">We Accept :
+    <span class="cardsAccepted"><img src="/BookingPage/cards-images.png" alt="cardsAccepted" class="cardsImage"></span></label>
+    
+    
+    <label for="fullName">Full Name</label>
+    <input class="formPayment" type="text" name="uname" placeholder="Enter Card Holder Name">
+    
+    
+    <label for="cardNumber">Card Number</label>
+    <input class="formPayment" type="text" name="psw" placeholder="Enter Card Number">
+    </div>
+
+
+    <div class="dateDetails">
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input 
+        type="text" 
+        id="expiryDate" 
+        placeholder="MM / YYYY" 
+        name="expDate"
+        value=""
+        required />
+    </div>
+      <div class="form-group">
+        <label for="lname">CVV</label>
+        <input 
+        type="text" 
+        id="cvv" 
+        placeholder="Code"
+        name="cvv"
+        value=""
+        required />     
+      </div>
+    </div>
+
+    <div class="paymentSubmit">
+      <button type="submit" class="loginbtn"> COMPLETE BOOKING </button>
+    </div>
+</form>    
+</div>

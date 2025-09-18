@@ -1,0 +1,89 @@
+.cardsImage{
+    width: 150px;
+    margin: 10px 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginForm {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #141C11;
+  border: 1px solid #99910A;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.dateDetails{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+
+
+.paymentSubmit button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #99910A;
+  color: #141C11;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.paymentSubmit button:hover {
+  background-color: #D9A866;
+}
+
+
+@media (max-width: 768px) {
+  .loginForm {
+    margin: 10px 5px 10px 9px;
+    padding: 15px 10px;
+    max-width: 95%;
+  }
+  
+  .form-control, .formPayment {
+    font-size: 16px;
+    padding: 8px;
+  }
+  
+  .dateDetails {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .card {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cardsImage {
+    width: 100px;
+  }
+  
+  .paymentSubmit button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px 0;
+  }
+}

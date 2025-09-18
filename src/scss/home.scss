@@ -16,6 +16,7 @@ h2,h1,h3{
 }
 .bannerImageDesktop{
     width: 100%;
+    cursor:default;
 }
 
 .bannerImageMobile{
@@ -46,6 +47,27 @@ width: 250px;
     justify-content: center;
 }
 
+.BookNowBtn{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.bookNowText{
+    background-color: #D19340;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    
+    }
+
+.bookNowText:hover{
+        background-color: #99910a;  
+    }
+
 .exploreMap{
     display: flex;
     flex-direction: column;
@@ -74,6 +96,72 @@ width: 250px;
     font-weight: 500;
 
 }
+
+
+.oneUSP,.twoUSP,.threeUSP{
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 250px;
+}
+
+.USPimage{
+width: 250px;
+}
+
+.USPtext{
+    width: 250px;
+    text-wrap: wrap;
+}
+
+.brandUSPs{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    gap: 30px;
+    justify-content: center;
+}
+
+
+.ticketItems{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    gap: 30px;
+    justify-content: center;    
+}
+
+.ticketCard{
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 250px;
+background-color: #6f4b1c;
+border-radius: 10px;
+border: 2px solid #6f4b1c;
+height: 240px;
+}
+
+
+.ticketInfo{
+    width: 220px;
+    background-color: #6f4b1c;
+    padding: 10px;   
+}
+
+
+
+.ticketName{
+    font-size: 24px;
+    font-weight: 300;
+    background-color: none;
+    padding: 10px;
+    height: 100px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
 
 @media (max-width: 768px) {
     .bannerImageDesktop {
@@ -104,5 +192,11 @@ width: 250px;
         max-width: 300px;
     }
 
-    
+    .ticketItems {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+    align-items: center;
+}    
 }

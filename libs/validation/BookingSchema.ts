@@ -9,14 +9,17 @@ export const bookingSchema = z.object({
   . refine ((val) => {
     const today = new Date();
     const bookingDate = new Date(val);
+    console.log(bookingDate);
     return bookingDate> today; }, 
+
     {message: "Booking date must be in the future"}),
 
   vipTicket: z.coerce.number().int().min(0, "Tickets cannot be negative"),
   adultTicket: z.coerce.number().int().min(0, "Tickets cannot be negative"),
   enfantTicket: z.coerce.number().int().min(0, "Tickets cannot be negative"),
   }).refine ((data)=>
-  {return (data.vipTicket+ data.adultTicket+data.enfantTicket)>0;}, {message: "Please book minimum 1 ticket"}
-)
+  {return (data.vipTicket+ data.adultTicket+data.enfantTicket)>0;}, {message: "Please book minimum 1 ticket",
+  path: [],}
+);
 
 export type BookingInput = z.infer<typeof bookingSchema>;

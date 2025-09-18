@@ -1,10 +1,16 @@
 <%- include("../partials/head", { title: "Accueil Talent Hub" }) %>
 
-<img src="/HomePage/bannerImageDesktop.png" alt="bannerImage" class="bannerImageDesktop">
+<a href="/booking">
+  <img src="/HomePage/bannerImageDesktop.png" alt="bannerImage" class="bannerImageDesktop" />
+</a>
 
-<img src="/HomePage/BannerImageMobile.png" alt="bannerImage" class="bannerImageMobile">
+<a href="/booking">
+  <img src="/HomePage/BannerImageMobile.png" alt="bannerImage" class="bannerImageMobile">
+</a>
 
+<h2>A WHOLE NEW WORLD AWAITS</h2>
 <div class="brandUSPs">
+
     <div class="oneUSP"> <img src="/HomePage/image1.png" alt="imageOne" class="USPimage">
     <h3 class="USPtext">Enchanting Landscapes</h3>
     <p class="USPtext">Explore stunning landscapes filled with waterfalls and lush greenery waiting to be discovered.</p>
@@ -23,6 +29,10 @@
 
 </div>
 
+<div class="BookNowBtn">
+<a href="/booking" class="bookNowText"> BOOK NOW </a>
+</div>
+
 <div class="exploreMap">
     <h1>Explore The Park</h1>
     <p class="exploreMapText">Step into a world where dinosaurs roam freely and come to life right before your eyes. <br> Experience the thrill of encountering these magnificent creatures as you walk the trails, watch their natural behaviors, and enjoy interactive shows that bring the Jurassic era into the present day. </p>
@@ -31,5 +41,30 @@
     <button type="button" class="downloadMap">DOWNLOAD MAP</button>
     </a>
 </div>
+
+
+<div class="ticketItems">
+
+    <div class="ticketCard"> 
+    <h3 class="ticketName">Enfant Ticket – €80</h3>
+    <p class="ticketInfo">Includes full park access and a choice of a dinosaur toy as a souvenir. Perfect for young dino-lovers to explore and play.(Ages under 16)</p>
+    </div>
+
+     <div class="ticketCard"> 
+    <h3 class="ticketName">Adult Ticket – €100</h3>
+    <p class="ticketInfo">Full-day park access with all dinosaur exhibits and shows included. Great value for a fun and educational adventure.</p>
+    </div>
+
+     <div class="ticketCard"> 
+    <h3 class="ticketName">VIP Ticket – €150</h3>
+    <p class="ticketInfo">Enter the park early with priority access and enjoy complimentary gourmet meals. Experience exclusive behind-the-scenes tours and premium lounge access.</p>
+    </div>
+    
+</div>
+
+<div class="BookNowBtn">
+<a href="/booking" class="bookNowText"> BOOK NOW </a>
+</div>
+
 
 <%- include("../partials/footer") %>

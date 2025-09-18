@@ -4,6 +4,8 @@ import dinosaurRouter from "./Dinosaurs";
 import bookingRouter from "./Booking";
 import bookingSummaryRouter from "./BookingSummary";
 import adminLoginRouter from "./adminLogin";
+import paymentRouter from "./Payment";
+
 
 
 const router = Router();
@@ -13,5 +15,6 @@ router.use ("/dinosaurs", dinosaurRouter);
 router.use ("/booking", bookingRouter);
 router.use ("/bookingSummary", bookingSummaryRouter);
 router.use ("/adminLogin", adminLoginRouter);
+router.use ("/payment", paymentRouter);
 
 export default router;   

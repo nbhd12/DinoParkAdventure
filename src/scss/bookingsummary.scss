@@ -1,0 +1,52 @@
+.bookingSummary{
+    border: 2px solid #99910a;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+
+
+}
+
+.bookingSummaryImage{
+    width: 396px;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bookingDetails{
+    display: flex;
+    flex-direction: row;
+    gap:20px ;
+}
+
+.bookingId{
+    margin-top: 20px;
+}
+
+.bookingSummaryDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 20px;
+    font-family: 'Oswald';
+}
+
+.exploreBtn{
+display: flex; 
+justify-content: center;
+align-items: center;
+}
+
+.exploreText{
+    background-color: #99910a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    
+    }
+
+.exploreText:hover{
+        background-color: #D19340;  
+    }
