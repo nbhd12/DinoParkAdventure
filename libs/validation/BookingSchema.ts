@@ -2,15 +2,17 @@ import { z } from "zod";
 
 
 export const bookingSchema = z.object({
-  firstName: z.string().min(3, "First name is required"),
-  lastName: z.string().min(3, "Last name is required"),
+  firstName: z.string().min(3, "First name is too short"),
+  lastName: z.string().min(3, "Last name is too short"),
   email: z.string().email("Please enter a valid email address"),
   date: z.string()
-  . refine ((val) => {
+  .refine((val) => {
     const today = new Date();
+    today.setHours(0, 0, 0, 0); 
     const bookingDate = new Date(val);
-    return bookingDate> today; }, 
-    {message: "Booking date must be in the future"}),
+    return bookingDate >= today; 
+  }, 
+  {message: "Booking date must be today or in the future"}),
 
   vipTicket: z.coerce.number().int().min(0, "Tickets cannot be negative"),
   adultTicket: z.coerce.number().int().min(0, "Tickets cannot be negative"),

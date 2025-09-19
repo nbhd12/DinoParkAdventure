@@ -33,7 +33,7 @@
 }
 
 .brand-logo {
-    background-image: url("/favicon/favicon-32X32.png");
+    background-image: url("/favicon/favicon1.png");
     width: 32px;
     height: 32px;
     margin-right: 12px;
@@ -65,9 +65,7 @@
 }
 
 .nav-item a:hover {
-    // background-color: #ffffff;
     color: #99910A;
-    // text-decoration: underline;
 
 }
 
@@ -138,5 +136,13 @@
 
     .hamburger {
         display: flex;
+    }
+
+     .nav-container {
+        padding: 0 28px; 
+    }
+    
+    .brand {
+        margin-left: 80px;
     }
 }

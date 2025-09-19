@@ -1,11 +1,11 @@
 <%- include("../partials/head", { title: "Dino Park Adventure" }) %>
 
 <div class="bookTickets">
-    
-    <h1>BOOK TICKETS</h1>
-    <img src="/BookingPage/BookingFormImage.png" alt="dinoParkMap" class="formImage">
-    <p class="exploreMapText">Step into a world where dinosaurs roam freely and come to life right before your eyes. Experience the thrill of encountering these magnificent creatures as you walk the trails, watch their natural behaviors, and enjoy interactive shows that bring the Jurassic era into the present day. </p>
-    
+  <h1>BOOK TICKETS</h1>
+  <img src="/BookingPage/BookingFormImage.png" alt="dinoParkMap" class="formImage">
+  <p class="exploreMapText">
+    Step into a world where dinosaurs roam freely and come to life right before your eyes. Experience the thrill of encountering these magnificent creatures as you walk the trails, watch their natural behaviors, and enjoy interactive shows that bring the Jurassic era into the present day.
+  </p>
 </div>
 
 <div class="booking-form-container">
@@ -16,28 +16,30 @@
       <div class="form-group">
         <label for="fname">First Name</label>
         <input 
-        type="text" 
-        id="fname" 
-        placeholder="Enter your First Name" 
-        name="firstName"
-        value="<%= oldValues?.firstName || '' %>"
-        required />
-        <% if (errors?.firstName) { %>
-        <p class="error"><%= errors.firstName %></p>
+          type="text" 
+          id="fname" 
+          placeholder="Enter your First Name" 
+          name="firstName"
+          value="<%= values?.firstName || '' %>"
+           />
+        <% if (formErrors?.firstName?._errors) { %>
+        <p class="error"><%= formErrors.firstName._errors[0] %></p>
         <% } %>
       </div>
+
       <div class="form-group">
         <label for="lname">Last Name</label>
         <input 
-        type="text" 
-        id="lname" 
-        placeholder="Enter your Last Name"
-        name="lastName"
-        value="<%= oldValues?.lastName || '' %>"
-        required />
-        <% if (errors?.lastName) { %>
-        <p class="error"><%= errors.lastName %></p>
+          type="text" 
+          id="lname" 
+          placeholder="Enter your Last Name"
+          name="lastName"
+          value="<%= values?.lastName || '' %>"
+          required />
+        <% if (formErrors?.lastName?._errors) { %>
+        <p class="error"><%= formErrors.lastName._errors[0] %></p>
         <% } %>
+
       </div>
     </div>
 
@@ -46,26 +48,27 @@
       <div class="form-group">
         <label for="email">Email ID</label>
         <input 
-        type="email" 
-        id="email" 
-        placeholder="Enter your email" 
-        name="email"
-        value="<%= oldValues?.email || '' %>"
-        required />
-        <% if (errors?.email) { %>
-        <p class="error"><%= errors.email %></p>
+          type="email" 
+          id="email" 
+          placeholder="Enter your email" 
+          name="email"
+          value="<%= values?.email || '' %>"
+          required />
+        <% if (formErrors?.email?._errors) { %>
+        <p class="error"><%= formErrors.email._errors[0] %></p>
         <% } %>
       </div>
+
       <div class="form-group">
         <label for="booking-date">Date of Booking</label>
         <input 
-        type="date" 
-        id="booking-date" 
-        name="date"
-        value="<%= oldValues?.date || '' %>"
-        required />
-        <% if (errors?.date) { %>
-        <p class="error"><%= errors.date %></p>
+          type="date" 
+          id="booking-date" 
+          name="date"
+          value="<%= values?.date || '' %>"
+          required />
+        <% if (formErrors?.date?._errors) { %>
+        <p class="error"><%= formErrors.date._errors[0] %></p>
         <% } %>
       </div>
     </div>
@@ -75,45 +78,45 @@
       <div class="form-group">
         <label for="vip">VIP Tickets - 150€</label>
         <input 
-        type="number" 
-        id="vip" 
-        name="vipTicket"
-        value="<%= oldValues?.vipTicket || 0 %>"  
-        min="0"/>
-        <% if (errors?.vipTicket) { %>
-        <p class="error"><%= errors.vipTicket %></p>
-        <% } %> 
-        
+          type="number" 
+          id="vip" 
+          name="vipTicket"
+          value="<%= values?.vipTicket || 0 %>"  
+          min="0"/>
+        <% if (formErrors?.vipTicket?._errors) { %>
+        <p class="error"><%= formErrors.vipTicket._errors[0] %></p>
+        <% } %>
       </div>
+
       <div class="form-group">
         <label for="enfant">Enfant Tickets - 80€</label>
         <input 
-        type="number" 
-        id="enfant" 
-        name="enfantTicket"
-        value="<%= oldValues?.enfantTicket || 0 %>" 
-        min="0" />
-        <% if (errors?.enfantTicket) { %>
-        <p class="error"><%= errors.enfantTicket %></p>
+          type="number" 
+          id="enfant" 
+          name="enfantTicket"
+          value="<%= values?.enfantTicket || 0 %>" 
+          min="0" />
+        <% if (formErrors?.enfantTicket?._errors) { %>
+        <p class="error"><%= formErrors.enfantTicket._errors[0] %></p>
         <% } %>
       </div>
     </div>
-
 
     <!-- Adult + Group -->
     <div class="ticket-row">
       <div class="form-group">
         <label for="adult">Adult Tickets - 100€</label>
         <input 
-        type="number" 
-        id="adult"
-        name="adultTicket" 
-        value="<%= oldValues?.adultTicket || 0 %>"
-        min="0" />
-        <% if (errors?.adultTicket) { %>
-        <p class="error"><%= errors.adultTicket %></p>
+          type="number" 
+          id="adult"
+          name="adultTicket" 
+          value="<%= values?.adultTicket || 0 %>"
+          min="0" />
+        <% if (formErrors?.adultTicket?._errors) { %>
+        <p class="error"><%= formErrors.adultTicket._errors[0] %></p>
         <% } %>
       </div>
+
       <div class="form-group group-section">
         <label for="group">Group Tickets (Coming Soon)</label>
         <input type="number" id="group" value="0" min="0" disabled placeholder="Coming Soon" />
@@ -123,19 +126,19 @@
     <!-- Final Price -->
     <div class="final-price-row">
       <div class="form-group" style="grid-column: span 2;">
-        <div id="final-price-box">The final price for the tickets will be</div>
-        <p>Total: <span id="final-price-box">0</span> €</p>
-
+        <p>Total: <span id="totalPrice">0</span> €</p>
+        <div id="final-price-box">To confirm your booking please proceed to payment page</div>
       </div>
     </div>
 
     <!-- Submit Button -->
     <div class="form-submit">
-      <button type="submit">BOOK NOW</button>
+    <button type="submit" onclick="return validateForm(event)">PAY NOW</button>
     </div>
+    
+    <% if (submitError) { %>
+      <p class="error">An error occurred while saving your booking details. Please try again.</p>
+    <% } %>
 
   </form>
 </div>
-
-
-</script>

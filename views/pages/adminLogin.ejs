@@ -1,19 +1,43 @@
 <%- include("../partials/head", { title: "Dino Park Adventure" }) %>
 
-
 <h2>Hello! This page belongs to the admin, the dino team which makes it all happen!</h2>
 
-<div class="loginForm">
-<form class="adminSignIn">
-    <div class="form-group">
 
+<% if (loginError) { %>
+  <div class="error-message">
+    <p class="error"><%= loginError %></p>
+  </div>
+<% } %>
+
+<form action="/adminLogin/login" method="POST" class="loginForm adminSignIn">
+  <div class="form-group">
     <label for="username">Username</label>
-    <input class="form-control" type="text" name="uname" placeholder="Enter Username">
+    <input 
+    class="form-control" 
+    type="text" 
+    name="username" 
+    value="<%= values?.username || '' %>" 
+    placeholder="Enter Username" >
+    <% if (formErrors?.username) { %>
+    <p class="error"><%= formErrors.username._errors?.[0] || formErrors.username %></p>
+    <% } %>
+
+
+
     <label for="password">Password</label>
-    <input class="form-control" type="password" name="psw" placeholder="Enter Password">
+    <input 
+    class="form-control" 
+    type="password" 
+    name="password" 
+    value="<%= values?.password || '' %>" 
+    placeholder="Enter Password">       
+    <% if (formErrors?.password) { %>
+      <p class="error"><%= formErrors.password._errors?.[0] || formErrors.password %></p>
+    <% } %>
     </div>
-    <div class="formSubmitAdmin">
-      <button type="submit" class="loginbtn">LOGIN</button>
-    </div>
-</form>    
-</div>
+
+
+  <div class="formSubmitAdmin">
+  <button type="submit" class="loginbtn">LOGIN</button>
+  </div>
+</form>
