@@ -5,7 +5,7 @@ import { bookingRepository } from "../repositories/Booking";
 import { Booking } from "../models/Booking";
 
 export class BookingController extends Controller {
-  // Route GET `/booking` - booking form
+  // Route GET `/booking` 
   public async createBooking() {
     this.response.render("pages/clientBookingForm.ejs", {
       type: "create",
@@ -15,12 +15,12 @@ export class BookingController extends Controller {
     });
   }
 
-  // Route POST `/booking/create` - booking form submission
+  // Route POST `/booking/create` 
   public async createBookingSubmission() {
     console.log("=== FORM SUBMISSION STARTED ===");
     console.log("Raw request body:", this.request.body);
     
-    // [1] Get data from form (convert strings to numbers)
+    // Get data from form to convert the strings to numbers)
     const formData = {
       firstName: this.request.body?.firstName,
       lastName: this.request.body?.lastName,
@@ -33,7 +33,7 @@ export class BookingController extends Controller {
 
     console.log("Processed form data:", formData);
 
-    // [2] Test Zod validation
+    //  Testing for Zod validation
     const validationResult = bookingSchema.safeParse(formData);
     
     console.log("Zod validation success:", validationResult.success);
@@ -49,17 +49,17 @@ export class BookingController extends Controller {
 
     console.log("Validated data:", validationResult.data);
 
-    // [3] Calculate total price
+    // Next, Calculating total price
     const vipPrice = validationResult.data.vipTicket * 150;
     const adultPrice = validationResult.data.adultTicket * 100;
     const enfantPrice = validationResult.data.enfantTicket * 80;
     const totalPrice = vipPrice + adultPrice + enfantPrice;
 
-    // [3] Generate booking reference
+    // Generate booking reference
     const currentYear = new Date().getFullYear();
     const bookingReference = `DP${currentYear}${String(Math.floor(Math.random() * 999) + 1).padStart(3, '0')}`;
 
-    // [3] Create booking object
+    //Create booking object
     const newBooking = new Booking(
       null,
       bookingReference,
@@ -69,7 +69,7 @@ export class BookingController extends Controller {
       false // paid status
     );
 
-    // [3] Save to database
+    // Saving to database
     const repository = new bookingRepository();
     // const result = await repository.create(newBooking);
     
@@ -78,14 +78,14 @@ console.log("Booking data being saved:", {
   reference: newBooking.getBookingReference(),
   date: newBooking.getBookingDate(), 
   price: newBooking.getTotalPrice(),
-  userId: newBooking.getUserId(), // This should be "1", not 1
+  userId: newBooking.getUserId(), 
   paid: newBooking.getPaid()
 });
 
 const result = await repository.create(newBooking);
 console.log("Database result:", result);
 
-    // [3] If save failed, show form with error
+  
     if (!result) {
       return this.response.render("pages/clientBookingForm.ejs", {
         type: "create",
@@ -95,7 +95,7 @@ console.log("Database result:", result);
       });
     }
 
-    // Store booking data in session for summary page
+    // Storing booking data in session for summary page
     this.request.session.bookingData = {
       ...validationResult.data,
       bookingReference,

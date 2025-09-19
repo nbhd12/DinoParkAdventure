@@ -21,4 +21,26 @@ export class AdminRepository extends Repository {
       return false;
     }
   }
+
+  
+  async findAll() {
+  const query = {
+    name: "fetch-all-bookings",
+    text: `
+      SELECT *
+      FROM bookings
+      ORDER BY booking_date DESC
+    `,
+    values: [], 
+  };
+
+  try {
+    const result = await this.pool.query(query);
+    return result.rows;
+  } catch (error) {
+    console.error("Error fetching all bookings:", error);
+    return [];
+  }
+}
+
 }

@@ -3,6 +3,7 @@ import { Controller } from "../libs/Controller";
 import { AdminRepository } from "../repositories/Admin";
 import { adminLoginSchema } from "../libs/validation/AdminSchema";
 import z from "zod";
+import { Booking } from "../models/Booking";
 
 export class AdminLoginController extends Controller {
     private adminRepository: AdminRepository;
@@ -57,13 +58,15 @@ export class AdminLoginController extends Controller {
     }
 
   
-    public dashboard() {
+    public async dashboard() {
         if (!this.request.session?.adminId) {
             return this.response.redirect("/adminLogin/");
         }
 
+        const bookings: Booking[] = await this.adminRepository.findAll();
+
         this.response.render("pages/adminDashboard", {
-            adminUsername: this.request.session.adminId,
+            adminUsername: this.request.session.adminId, bookings,
         });
     }
 } 

@@ -1,0 +1,46 @@
+hr{
+    margin-top: 80px;
+}
+
+.footerCols{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    gap: 120px;
+    margin-bottom: 50px;
+}
+
+ul{
+    list-style: none;
+
+}
+
+h2{
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.logofooter{
+    height: 100px;
+}
+
+.logofooter1{
+    height: 160px;
+}
+
+@media (max-width: 768px) {
+
+.footerCols{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+    margin: 40px 120px;
+}
+.h2{
+    text-align: left;
+}
+}
